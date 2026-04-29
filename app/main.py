@@ -9,7 +9,6 @@ def convert_age(age: int, first: int, second: int, step: int) -> int:
 def get_human_age(cat_age: int, dog_age: int) -> list:
     """
     Convert cat and dog ages to human years.
-
     Rules:
     Cat: first 15 years = 1 human year, next 9 = +1, then every 4 = +1
     Dog: first 15 years = 1 human year, next 9 = +1, then every 5 = +1
@@ -26,7 +25,8 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
         get_human_age(15, 15) == [1, 1]
         get_human_age(24, 24) == [2, 2]
     """
-    # TODO: Implement this function
+    if not isinstance(cat_age, int) or not isinstance(dog_age, int):
+        raise TypeError("Ages must be integers.")
     return [
         convert_age(cat_age, first=15, second=9, step=4),
         convert_age(dog_age, first=15, second=9, step=5),
